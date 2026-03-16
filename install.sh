@@ -23,11 +23,16 @@ if ! command -v yay &>/dev/null; then
     cd ~
     ok "yay instalado"
 fi
+# Instala Hyprland primeiro
+echo ""
+echo "🪟 Instalando Hyprland..."
+sudo pacman -S --needed hyprland && ok "Hyprland instalado"
+
 # Pacotes pacman
 echo ""
 echo "📦 Instalando pacotes pacman..."
 sudo pacman -S --needed \
-    hyprland waybar kitty zsh rofi-wayland \
+    waybar kitty zsh rofi-wayland \
     swww nemo brightnessctl playerctl \
     bluez bluez-utils blueman \
     networkmanager network-manager-applet \
