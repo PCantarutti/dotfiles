@@ -35,7 +35,8 @@ sudo pacman -S hyprland waybar kitty zsh rofi-wayland \
                grim slurp wl-clipboard \
                libnotify python-pywal \
                ttf-jetbrains-mono-nerd \
-               xdg-desktop-portal-hyprland \
+               xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
+               adw-gtk-theme \
                wireless_tools wl-clipboard \
                gnome-software playerctl \
                gtk3 python-gobject flatpak
