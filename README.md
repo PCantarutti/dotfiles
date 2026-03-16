@@ -26,7 +26,11 @@ O script instala todas as dependências, copia as configs e habilita os serviço
 ## 📦 Dependências
 ### Pacman
 ```bash
-sudo pacman -S hyprland waybar kitty zsh rofi-wayland \
+# Instale o Hyprland primeiro
+sudo pacman -S hyprland
+
+# Depois as demais dependências
+sudo pacman -S waybar kitty zsh rofi-wayland \
                hyprlock swayidle \
                swww nemo brightnessctl playerctl \
                bluez bluez-utils blueman \
