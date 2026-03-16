@@ -27,7 +27,7 @@ chosen=$(echo "$apps" | awk -F'|' '{print $1}' | rofi -dmenu -p " Apps" -i -norm
     -me-select-entry "" \
     -me-accept-entry "MousePrimary" \
     -kb-custom-1 "Control+o" \
-    -theme ~/.config/rofi/wifi-bluetooth.rasi)
+    -theme ~/.config/rofi/add-to-dock.rasi)
 
 ret=$?
 [ -z "$chosen" ] && exit
