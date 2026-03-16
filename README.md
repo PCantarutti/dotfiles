@@ -1,7 +1,6 @@
 # Dotfiles - Pedro Cantarutti
 
 ## 📸 Preview
-<!-- Adicione um screenshot aqui depois -->
 ![Preview1](preview/Preview1.png)
 ![Preview2](preview/Preview2.png)
 ![Preview3](preview/Preview3.png)
@@ -30,7 +29,10 @@ sudo pacman -S hyprland waybar kitty zsh rofi-wayland \
                grim slurp wl-clipboard \
                libnotify python-pywal \
                ttf-jetbrains-mono-nerd \
-               xdg-desktop-portal-hyprland
+               xdg-desktop-portal-hyprland \
+               wireless_tools wl-clipboard \
+               gnome-software playerctl \
+               gtk3 python-gobject
 ```
 
 ### AUR (yay)
@@ -51,6 +53,21 @@ sudo systemctl enable sddm
 ### Configure o layout do teclado:
 Edite `~/.config/hypr/hyprland.conf` e mude o bloco `input` para o layout do seu teclado.
 
+### Desative o power saving do WiFi (melhora performance):
+```bash
+# Substitua wlp3s0 pelo nome da sua interface WiFi
+sudo iwconfig wlp3s0 power off
+```
+
+Para desativar permanentemente:
+```bash
+sudo nano /etc/NetworkManager/conf.d/wifi-powersave.conf
+```
+```ini
+[connection]
+wifi.powersave = 2
+```
+
 ## ⌨️ Atalhos principais
 
 | Atalho | Ação |
@@ -58,7 +75,7 @@ Edite `~/.config/hypr/hyprland.conf` e mude o bloco `input` para o layout do seu
 | Super + T | Terminal (Kitty) |
 | Super + B | Browser (Firefox) |
 | Super + E | Gerenciador de arquivos (Nemo) |
-| Super + L | Launcher (Wofi) |
+| Super + L | Buscar e fixar apps no dock |
 | Super + V | Editor de código (VSCode) |
 | Super + W | Wallpaper (Waypaper) |
 | Super + P | Screenshot |
@@ -76,8 +93,8 @@ Edite `~/.config/hypr/hyprland.conf` e mude o bloco `input` para o layout do seu
 | Super + LMB | Mover janela |
 | Super + RMB | Redimensionar janela |
 | Super + Shift + LMB | Redimensionar janela |
-| Print | Menu de screenshot |
 | Teclas Fn | Volume e brilho |
+| Teclas mídia | Play/Pause/Próxima/Anterior |
 
 ## 📁 Estrutura
 ```
