@@ -7,8 +7,8 @@
     "height": 35,
 
     "modules-left":   ["hyprland/workspaces", "group/system", "group/media-controls"],
-    "modules-center": ["tray"],
-    "modules-right":  ["group/controls", "group/conection", "clock", "custom/power"],
+    "modules-center": ["custom/add-dock", "group/dock"],
+    "modules-right":  ["tray", "group/controls", "group/conection", "clock", "custom/power"],
 
 
     // ################
@@ -39,7 +39,7 @@
 
     "battery": {
         "format":          "  {icon} {capacity}% ",
-        "format-charging": "  🗲 {capacity}% ",
+        "format-charging": "  󱐋 {capacity}% ",
         "format-plugged":  "   {capacity}% ",
         "format-alt":      "  {icon}  {time} ",
         "format-icons": ["", "", "", "", ""],
@@ -199,6 +199,58 @@
         "tooltip":  false
     },
 
+    // #######################################
+    // ### BARRA DE MODULOS DOS APLICATIVOS ##
+    // #######################################
+
+    "custom/add-dock": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/add-to-dock.sh"
+    },
+
+    "custom/firefox": {
+        "format": "󰈹",
+        "on-click": "firefox",
+        "tooltip-format": "Firefox",
+        "tooltip": true
+    },
+
+    "custom/stremio": {
+        "format": "",
+        "on-click": "flatpak run com.stremio.Stremio",
+        "tooltip-format": "Stremio",
+        "tooltip": true
+    },
+
+    "custom/files": {
+        "format": "󰉋",
+        "on-click": "nemo",
+        "tooltip-format": "Arquivos",
+        "tooltip": true
+    },
+
+    "custom/discord": {
+        "format": "",
+        "on-click": "/usr/bin/flatpak run com.discordapp.Discord",
+        "tooltip-format": "Discord",
+        "tooltip": true
+    },
+
+        "custom/code": {
+        "format": "󰨞",
+        "on-click": "code",
+        "tooltip-format": "VS Code",
+        "tooltip": true
+    },
+
+        "custom/spotify": {
+        "format": "",
+        "on-click": "spotify",
+        "tooltip-format": "Spotify",
+        "tooltip": true
+    },
+
     // ############
     // ### GROUPS ##
     // ############
@@ -230,11 +282,6 @@
 
     "group/dock": {
         "orientation": "horizontal",
-        "modules": [
-            "custom/firefox",
-            "custom/terminal",
-            "custom/files",
-            "custom/code"
-        ]
-    },
+        "modules": ["custom/firefox", "custom/code", "custom/files", "custom/stremio", "custom/spotify", "custom/discord"]
+    }
 }

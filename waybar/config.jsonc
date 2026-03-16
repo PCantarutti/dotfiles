@@ -232,7 +232,7 @@
 
     "custom/discord": {
         "format": "",
-        "on-click": "discord",
+        "on-click": "/usr/bin/flatpak run com.discordapp.Discord",
         "tooltip-format": "Discord",
         "tooltip": true
     },
@@ -246,7 +246,7 @@
 
         "custom/spotify": {
         "format": "",
-        "on-click": "spotify",
+        "on-click": "/usr/bin/flatpak run com.spotify.Client",
         "tooltip-format": "Spotify",
         "tooltip": true
     },

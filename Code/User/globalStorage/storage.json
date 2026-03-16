@@ -8,6 +8,9 @@
         "emptyWindows": [
             {
                 "backupFolder": "1773459738297"
+            },
+            {
+                "backupFolder": "1773641507764"
             }
         ]
     },
@@ -15,7 +18,8 @@
     "profileAssociations": {
         "workspaces": {},
         "emptyWindows": {
-            "1773459738297": "__default__profile__"
+            "1773459738297": "__default__profile__",
+            "1773641507764": "__default__profile__"
         }
     },
     "theme": "vs-dark",

@@ -9,11 +9,10 @@ apps=$(find /usr/share/applications ~/.local/share/applications /var/lib/flatpak
 
     name=$(grep -m1 "^Name=" "$f" | cut -d= -f2)
     [[ "$name" == *.*.* ]] && continue
-
     raw_exec=$(grep -m1 "^Exec=" "$f" | cut -d= -f2-)
 
     if echo "$raw_exec" | grep -q "flatpak run"; then
-        appid=$(echo "$raw_exec" | grep -oP '[\w]+\.[\w]+\.[\w]+(?=\s+@@)')
+        appid=$(echo "$raw_exec" | grep -oP '[\w]+\.[\w]+\.[\w]+')
         exec_path="/usr/bin/flatpak run $appid"
     else
         exec_path=$(echo "$raw_exec" | sed 's/ %.*//g' | sed 's/ $//g')
@@ -53,10 +52,7 @@ if [ $ret -eq 10 ]; then
     code --goto "$style:$style_line"
     code --goto "$CONFIG:$line"
 else
-    desktop=$(find /usr/share/applications ~/.local/share/applications /var/lib/flatpak/exports/share/applications ~/.local/share/flatpak/exports/share/applications -name "*.desktop" 2>/dev/null | while read f; do
-        name=$(grep -m1 "^Name=" "$f" | cut -d= -f2)
-        [ "$name" = "$chosen" ] && echo "$f" && break
-    done | head -1)
+    desktop=$(find /usr/share/applications ~/.local/share/applications /var/lib/flatpak/exports/share/applications ~/.local/share/flatpak/exports/share/applications -name "*.desktop" 2>/dev/null | xargs grep -l "^Name=$chosen" 2>/dev/null | head -1)
     if [ -n "$desktop" ]; then
         gtk-launch "$(basename "$desktop" .desktop)" &
     else

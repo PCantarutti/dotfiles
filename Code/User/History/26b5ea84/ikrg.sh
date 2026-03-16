@@ -53,10 +53,7 @@ if [ $ret -eq 10 ]; then
     code --goto "$style:$style_line"
     code --goto "$CONFIG:$line"
 else
-    desktop=$(find /usr/share/applications ~/.local/share/applications /var/lib/flatpak/exports/share/applications ~/.local/share/flatpak/exports/share/applications -name "*.desktop" 2>/dev/null | while read f; do
-        name=$(grep -m1 "^Name=" "$f" | cut -d= -f2)
-        [ "$name" = "$chosen" ] && echo "$f" && break
-    done | head -1)
+    desktop=$(find /usr/share/applications ~/.local/share/applications /var/lib/flatpak/exports/share/applications ~/.local/share/flatpak/exports/share/applications -name "*.desktop" 2>/dev/null | xargs grep -l "^Name=$chosen" 2>/dev/null | head -1)
     if [ -n "$desktop" ]; then
         gtk-launch "$(basename "$desktop" .desktop)" &
     else
