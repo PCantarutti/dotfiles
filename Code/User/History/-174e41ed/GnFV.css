@@ -1,0 +1,101 @@
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.modules-center,
+#workspaces,
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#bluetooth,
+#backlight,
+#custom-power,
+#custom-notification,
+#custom-media,
+#custom-prev,
+#custom-play,
+#custom-next {
+    background-color: rgba(20, 20, 20, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin: 5px 3px;
+    padding: 0 12px;
+    color: #ffffff;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #888888;
+    border-radius: 20px;
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#battery.critical {
+    color: #ff4444;
+    animation: blink 1s infinite;
+}
+
+#battery.warning {
+    color: #ffaa00;
+}
+
+#battery.charging, #battery.full {
+    color: #00ff88;
+}
+
+#bluetooth.connected {
+    color: #4a9ef5;
+}
+
+#bluetooth.off {
+    color: #555555;
+}
+
+#custom-power {
+    font-size: 16px;
+    color: #ff4444;
+}
+
+#custom-media {
+    color: #aaaaaa;
+}
+
+#custom-prev,
+#custom-play,
+#custom-next {
+    padding: 0 8px;
+    font-size: 14px;
+}
+
+#custom-prev:hover,
+#custom-play:hover,
+#custom-next:hover {
+    color: #4a9ef5;
+}
+
+.media-drawer {
+    background: transparent;
+}
+
+#system {
+    background-color: rgba(20, 20, 20, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin: 5px 3px;
+    padding: 0 4px;
+}
+
+@keyframes blink {
+    to { opacity: 0; }
+}

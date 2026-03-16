@@ -1,0 +1,32 @@
+# Senhas e tokens
+**/*token*
+**/*secret*
+**/*password*
+**/*credentials*
+**/*auth*
+
+# Browsers (cookies, senhas salvas)
+google-chrome/
+chromium/
+firefox/
+BraveSoftware/
+
+# Keyrings
+gnome-keyring/
+kde-wallet/
+
+# SSH
+../ssh/
+
+# Histórico de shell
+../zsh_history
+../bash_history
+
+# Dados pessoais
+pulse/
+dconf/
+
+# Caches
+*/Cache/
+*/cache/
+*/.cache/

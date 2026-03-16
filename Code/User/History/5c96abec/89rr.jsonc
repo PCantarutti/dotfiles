@@ -1,0 +1,219 @@
+{
+    // ##################
+    // ### BAR CONFIG ###
+    // ##################
+    "layer": "top",
+    "position": "top",
+    "height": 35,
+
+    "modules-left":   ["hyprland/workspaces", "group/system", "group/media-controls"],
+    "modules-center": ["hyprland/window"],
+    "modules-right":  ["group/controls", "group/conection", "clock", "custom/power"],
+
+
+    // ################
+    // ### PROGRAMS ###
+    // ################
+
+    "hyprland/window": {
+        "max-length": 50,
+        "separate-outputs": true
+    },
+
+
+    // #############
+    // ### CLOCK ###
+    // #############
+
+    "clock": {
+        "format": "{:%H:%M | %d/%m/%Y}",
+        "format-alt": " {:%H:%M}",
+        "tooltip": false
+    },
+
+
+    // ###############
+    // ### BATTERY ###
+    // ###############
+
+    "battery": {
+        "format":          "  {icon} {capacity}% ",
+        "format-charging": "  🗲 {capacity}% ",
+        "format-plugged":  "   {capacity}% ",
+        "format-alt":      "  {icon}  {time} ",
+        "format-icons": ["", "", "", "", ""],
+        "states": {
+            "warning":  30,
+            "critical": 15
+        }
+    },
+
+
+    // ###############
+    // ### NETWORK ###
+    // ###############
+
+    "network": {
+        "format-wifi":       " 󰖩 {signalStrength}%  ",
+        "format-disconnected": " 󰖪  ",
+        "format-disabled":   " 󰖪  ",
+        "format-ethernet":   " Connected   ",
+        "tooltip-format":    "{essid} ({signalStrength}%)",
+        "on-click":          "~/.config/waybar/scripts/wifi-menu.sh"
+    },
+
+
+    // ###############
+    // ### VOLUME  ###
+    // ###############
+
+    "pulseaudio": {
+        "format":       " {icon} {volume}%",
+        "format-muted": "󰝟 Mudo",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        }
+    },
+
+
+    // #################
+    // ### BACKLIGHT ###
+    // #################
+
+    "backlight": {
+        "format":       "  {icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "tooltip":      false
+    },
+
+
+    // #################
+    // ### BLUETOOTH ###
+    // #################
+
+    "bluetooth": {
+        "format":                   "󰂯",
+        "format-connected":         "󰂰 {device_battery_percentage}%",
+        "format-off":               "󰂲",
+        "tooltip-format":           "Bluetooth desconectado",
+        "tooltip-format-connected": "{device_alias} - {device_battery_percentage}%",
+        "on-click":                 "~/.config/waybar/scripts/bluetooth-menu.sh"
+    },
+
+
+    // ####################
+    // ### SYSTEM STATS ###
+    // ####################
+
+    "cpu": {
+        "format":  "   {usage}%",
+        "tooltip": true
+    },
+
+    "memory": {
+        "format": "    {}%"
+    },
+
+    "temperature": {
+        "hwmon-path":         "/sys/class/thermal/thermal_zone2/temp",
+        "critical-threshold": 80,
+        "format":             "  {icon} {temperatureC}°C ",
+        "format-critical":    "{icon} {temperatureC}°C",
+        "format-icons":       ["", "", ""]
+    },
+
+
+    // ####################
+    // ### NOTIFICATION ###
+    // ####################
+
+    "custom/notification": {
+        "tooltip": false,
+        "format":  "  {icon} ",
+        "format-icons": {
+            "notification":     "󰂚",
+            "none":             "󰂜",
+            "dnd-notification": "󰂛",
+            "dnd-none":         "󰂛"
+        },
+        "return-type": "json",
+        "exec-if":     "which swaync-client",
+        "exec":        "swaync-client -swb",
+        "on-click":    "swaync-client -t -sw",
+        "escape":      true
+    },
+
+
+    // #############
+    // ### POWER ###
+    // #############
+
+    "custom/power": {
+        "format":   "⏻",
+        "tooltip":  false,
+        "on-click": "~/.config/waybar/scripts/power-menu.sh"
+    },
+
+
+    // #######################
+    // ### MEDIA CONTROLS  ###
+    // #######################
+
+    "custom/media": {
+        "exec":       "~/.config/waybar/scripts/media-info.sh",
+        "interval":   2,
+        "max-length": 30,
+        "on-click":   "playerctl play-pause",
+        "tooltip":    false
+    },
+
+    "custom/prev": {
+        "format":   "⏮",
+        "on-click": "playerctl previous",
+        "tooltip":  false
+    },
+
+    "custom/play": {
+        "format":   "{}",
+        "exec":     "playerctl status 2>/dev/null | sed 's/Playing/⏸/;s/Paused/▶/;s/Stopped/⏹/'",
+        "interval": 1,
+        "on-click": "playerctl play-pause",
+        "tooltip":  false
+    },
+
+    "custom/next": {
+        "format":   "⏭",
+        "on-click": "playerctl next",
+        "tooltip":  false
+    },
+
+
+    // ############
+    // ### GROUPS ##
+    // ############
+
+    "group/media-controls": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration":    300,
+            "children-class":         "media-drawer",
+            "transition-left-to-right": true
+        },
+        "modules": ["custom/media", "custom/prev", "custom/play", "custom/next"]
+    },
+
+    "group/system": {
+        "orientation": "horizontal",
+        "modules": ["cpu", "memory", "temperature"]
+    },
+
+    "group/controls": {
+        "orientation": "horizontal",
+        "modules": ["pulseaudio", "backlight", "custom/notification"]
+    },
+
+    "group/conection": {
+        "orientation": "horizontal",
+        "modules": ["network", "bluetooth", "battery"]
+    }
+}

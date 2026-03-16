@@ -1,0 +1,281 @@
+{
+    // ##################
+    // ### BAR CONFIG ###
+    // ##################
+    "layer": "top",
+    "position": "top",
+    "height": 35,
+
+    "modules-left":   ["hyprland/workspaces", "group/system", "group/media-controls"],
+    "modules-center": ["group/dock"],
+    "modules-right":  ["tray", "group/controls", "group/conection", "clock", "custom/power"],
+
+
+    // ################
+    // ### PROGRAMS ###
+    // ################
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8,
+        "show-passive-items": false
+    },
+
+
+    // #############
+    // ### CLOCK ###
+    // #############
+
+    "clock": {
+        "format": "{:%H:%M | %d/%m/%Y}",
+        "format-alt": " {:%H:%M}",
+        "tooltip": false
+    },
+
+
+    // ###############
+    // ### BATTERY ###
+    // ###############
+
+    "battery": {
+        "format":          "  {icon} {capacity}% ",
+        "format-charging": "   {capacity}% ",
+        "format-plugged":  "   {capacity}% ",
+        "format-alt":      "  {icon}  {time} ",
+        "format-icons": ["", "", "", "", ""],
+        "states": {
+            "warning":  30,
+            "critical": 15
+        }
+    },
+
+
+    // ###############
+    // ### NETWORK ###
+    // ###############
+
+    "network": {
+        "format-wifi":       " 󰖩 {signalStrength}%  ",
+        "format-disconnected": " 󰖪  ",
+        "format-disabled":   " 󰖪  ",
+        "format-ethernet":   " Connected   ",
+        "tooltip-format":    "{essid} ({signalStrength}%)",
+        "on-click":          "~/.config/waybar/scripts/wifi-menu.sh",
+        "on-click-right":    "sh -c 'sleep 0.1 && nm-applet --indicator &'"
+    },
+
+
+    // ###############
+    // ### VOLUME  ###
+    // ###############
+
+    "pulseaudio": {
+        "format":       " {icon} {volume}%",
+        "format-muted": "󰝟 Mudo",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        }
+    },
+
+
+    // #################
+    // ### BACKLIGHT ###
+    // #################
+
+    "backlight": {
+        "format":       "  {icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "tooltip":      false
+    },
+
+
+    // #################
+    // ### BLUETOOTH ###
+    // #################
+
+    "bluetooth": {
+        "format":                   "󰂯",
+        "format-connected":         "󰂰 {device_battery_percentage}%",
+        "format-off":               "󰂲",
+        "tooltip-format":           "Bluetooth desconectado",
+        "tooltip-format-connected": "{device_alias} - {device_battery_percentage}%",
+        "on-click":                 "~/.config/waybar/scripts/bluetooth-menu.sh"
+    },
+
+
+    // ####################
+    // ### SYSTEM STATS ###
+    // ####################
+
+    "cpu": {
+        "format":  "   {usage}%",
+        "tooltip": true
+    },
+
+    "memory": {
+        "format": "    {}%"
+    },
+
+    "temperature": {
+        "hwmon-path":         "/sys/class/thermal/thermal_zone2/temp",
+        "critical-threshold": 75,
+        "format":             "  {icon} {temperatureC}°C ",
+        "format-critical":    "  {icon} {temperatureC}°C ",
+        "format-icons":       ["", "", ""]
+    },
+
+    // #################
+    // ### SCREENSHOT ##
+    // #################
+
+    "custom/screenshot": {
+        "format": "  󰹑 ",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/screenshot.sh"
+    },
+
+
+    // ####################
+    // ### NOTIFICATION ###
+    // ####################
+
+    "custom/notification": {
+        "tooltip": false,
+        "format":  "  {icon} ",
+        "format-icons": {
+            "notification":     "󰂚",
+            "none":             "󰂜",
+            "dnd-notification": "󰂛",
+            "dnd-none":         "󰂛"
+        },
+        "return-type": "json",
+        "exec-if":     "which swaync-client",
+        "exec":        "swaync-client -swb",
+        "on-click":    "swaync-client -t -sw",
+        "escape":      true
+    },
+
+
+    // #############
+    // ### POWER ###
+    // #############
+
+    "custom/power": {
+        "format":   "⏻",
+        "tooltip":  false,
+        "on-click": "~/.config/waybar/scripts/power-menu.sh"
+    },
+
+
+    // #######################
+    // ### MEDIA CONTROLS  ###
+    // #######################
+
+    "custom/media": {
+        "exec":       "~/.config/waybar/scripts/media-info.sh",
+        "interval":   2,
+        "max-length": 30,
+        "on-click":   "playerctl play-pause",
+        "tooltip":    false
+    },
+
+    "custom/prev": {
+        "format":   "⏮",
+        "on-click": "playerctl previous",
+        "tooltip":  false
+    },
+
+    "custom/play": {
+        "format":   "{}",
+        "exec":     "playerctl status 2>/dev/null | sed 's/Playing/⏸/;s/Paused/▶/;s/Stopped/⏹/'",
+        "interval": 1,
+        "on-click": "playerctl play-pause",
+        "tooltip":  false
+    },
+
+    "custom/next": {
+        "format":   "⏭",
+        "on-click": "playerctl next",
+        "tooltip":  false
+    },
+
+    // ###########################
+    // ### BARRA DE APLICATIVOS ##
+    // ###########################
+
+    "custom/firefox": {
+    "format": "󰈹",
+    "on-click": "firefox",
+    "tooltip-format": "Firefox",
+    "tooltip": true
+    },
+
+    "custom/stremio": {
+        "format": "",
+        "on-click": "flatpak run com.stremio.Stremio",
+        "tooltip-format": "Stremio",
+        "tooltip": true
+    },
+
+    "custom/files": {
+        "format": "󰉋",
+        "on-click": "nemo",
+        "tooltip-format": "Arquivos",
+        "tooltip": true
+    },
+
+    "custom/discord": {
+        "format": "",
+        "on-click": "discord",
+        "tooltip-format": "Discord",
+        "tooltip": true
+    },
+
+        "custom/code": {
+        "format": "󰨞",
+        "on-click": "code",
+        "tooltip-format": "VS Code",
+        "tooltip": true
+    },
+
+        "custom/spotify": {
+        "format": "",
+        "on-click": "spotify",
+        "tooltip-format": "Spotify",
+        "tooltip": true
+    },
+
+    // ############
+    // ### GROUPS ##
+    // ############
+
+    "group/media-controls": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration":    300,
+            "children-class":         "media-drawer",
+            "transition-left-to-right": true
+        },
+        "modules": ["custom/media", "custom/prev", "custom/play", "custom/next"]
+    },
+
+    "group/system": {
+        "orientation": "horizontal",
+        "modules": ["cpu", "memory", "temperature"]
+    },
+
+    "group/controls": {
+        "orientation": "horizontal",
+        "modules": ["pulseaudio", "backlight", "custom/screenshot","custom/notification"]
+    },
+
+    "group/conection": {
+        "orientation": "horizontal",
+        "modules": ["network", "bluetooth", "battery"]
+    },
+
+    "group/dock": {
+        "orientation": "horizontal",
+        "modules": ["custom/firefox", "custom/code", "custom/files", "custom/stremio", "custom/spotify", "custom/discord"]
+    }
+}

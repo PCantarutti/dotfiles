@@ -1,0 +1,11 @@
+2026-03-14 23:39:28.605 [info] Started local extension host with pid 61360.
+2026-03-14 23:39:30.897 [warning] [DefaultAccount] Attempt 1 to get sessions failed: Canceled
+2026-03-14 23:39:30.897 [error] Canceled: Canceled
+    at wI (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:383:1431)
+    at vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:4992:47396
+    at Array.forEach (<anonymous>)
+    at a.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:4992:47304)
+    at nU.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:4992:60603)
+    at cBi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:4999:10470)
+    at lBi.stopAllInReverse (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:4999:9610)
+    at async hdt._doStopExtensionHosts (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:4998:22317)

@@ -1,0 +1,8 @@
+2026-03-14 23:39:30.028 [info] Extension host with pid 61360 started
+2026-03-14 23:39:30.088 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2026-03-14 23:39:30.154 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-03-14 23:39:30.198 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-03-14 23:39:30.226 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-03-14 23:39:30.399 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-03-14 23:39:30.946 [info] Extension host terminating: renderer closed the MessagePort
+2026-03-14 23:39:30.957 [info] Extension host with pid 61360 exiting with code 0

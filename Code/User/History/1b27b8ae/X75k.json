@@ -1,0 +1,47 @@
+{
+    "positionX": "right",
+    "positionY": "top",
+    "layer": "overlay",
+    "control-center-margin-top": 10,
+    "control-center-margin-bottom": 10,
+    "control-center-margin-right": 10,
+    "control-center-width": 500,
+    "widgets": [
+        "buttons-grid",
+        "volume",
+        "backlight",
+        "mpris",
+        "notifications"
+    ],
+    "widget-config": {
+        "buttons-grid": {
+            "actions": [
+                {
+                    "label": "󰤨  WiFi",
+                    "command": "bash -c 'if [ $(nmcli radio wifi) = enabled ]; then nmcli radio wifi off; else nmcli radio wifi on; fi'"
+                },
+                {
+                    "label": "󰂯 Bluetooth",
+                    "command": "bash -c 'if hciconfig hci0 | grep -q \"UP\"; then hciconfig hci0 down; else hciconfig hci0 up; fi'"
+                },
+                {
+                    "label": "󰤨  Config",
+                    "command": "nm-connection-editor"
+                },
+                {
+                    "label": "󰂯 Config",
+                    "command": "blueman-manager"
+                }
+            ]
+        },
+        "volume": {
+            "label": "󰕾"
+        },
+        "backlight": {
+            "label": "󰃠"
+        },
+        "notifications": {
+            "position": "top"
+        }
+    }
+}

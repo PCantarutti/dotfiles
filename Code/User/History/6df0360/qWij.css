@@ -1,0 +1,49 @@
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 13px;
+}
+
+.control-center {
+    background: rgba(20, 20, 20, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+}
+
+.widget-title {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.notification {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px;
+    margin: 4px;
+}
+
+.notification-action {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    color: white;
+}
+
+.notification-action:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.close-button {
+    background: rgba(255, 80, 80, 0.5);
+    border-radius: 50%;
+    color: white;
+}
+
+.close-button:hover {
+    background: rgba(255, 80, 80, 0.8);
+}
