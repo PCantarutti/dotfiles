@@ -1,8 +1,0 @@
-[Default Applications]
-image/jpeg=org.gnome.eog.desktop
-image/png=org.gnome.eog.desktop
-
-[Added Associations]
-image/jpeg=org.gnome.eog.desktop;
-application/vnd.flatpak.ref=userapp-flatpak-NTY7L3.desktop;
-image/png=org.gnome.eog.desktop;

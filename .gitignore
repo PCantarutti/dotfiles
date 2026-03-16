@@ -1,41 +1,26 @@
-# Senhas e tokens
-**/*token*
-**/*secret*
-**/*password*
-**/*credentials*
-**/*auth*
+# Ignora tudo
+*
 
-# Browsers (cookies, senhas salvas)
-google-chrome/
-chromium/
-firefox/
-BraveSoftware/
+# Permite pastas e arquivos específicos
+!.gitignore
+!README.md
+!preview/
+!preview/**
 
-# VSCode cache e logs
-Code/DawnGraphiteCache/
-Code/DawnWebGPUCache/
-Code/GPUCache/
-Code/logs/
-Code/User/History/
-Code/User/globalStorage/
-Code/User/workspaceStorage/
+!hypr/
+!hypr/**
 
-# Keyrings
-gnome-keyring/
-kde-wallet/
+!waybar/
+!waybar/**
 
-# SSH
-../ssh/
+!rofi/
+!rofi/**
 
-# Histórico de shell
-../zsh_history
-../bash_history
+!swayosd/
+!swayosd/**
 
-# Dados pessoais
-pulse/
-dconf/
+!swaync/
+!swaync/**
 
-# Caches
-*/Cache/
-*/cache/
-*/.cache/
+!kitty/
+!kitty/**
