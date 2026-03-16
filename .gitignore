@@ -1,26 +1,24 @@
 # Ignora tudo
 *
-
 # Permite pastas e arquivos específicos
 !.gitignore
 !README.md
+!install.sh
 !preview/
 !preview/**
-
 !hypr/
 !hypr/**
-
 !waybar/
 !waybar/**
-
 !rofi/
 !rofi/**
-
 !swayosd/
 !swayosd/**
-
 !swaync/
 !swaync/**
-
 !kitty/
 !kitty/**
+!systemd/
+!systemd/**
+!wallpapers/
+!wallpapers/**

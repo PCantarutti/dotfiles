@@ -1,10 +1,8 @@
 # Dotfiles - Pedro Cantarutti
-
 ## 📸 Preview
 ![Preview1](preview/Preview1.png)
 ![Preview2](preview/Preview2.png)
 ![Preview3](preview/Preview3.png)
-
 ## 🖥️ Setup
 - **OS:** Arch Linux
 - **WM:** Hyprland
@@ -15,13 +13,21 @@
 - **Notifications:** SwayNC
 - **OSD:** SwayOSD
 - **Wallpaper:** Waypaper + SWWW
+- **Lock Screen:** Hyprlock + Swayidle
 - **File Manager:** Nemo
-
+## 🚀 Instalação
+```bash
+git clone https://github.com/PCantarutti/dotfiles.git
+cd dotfiles
+chmod +x install.sh
+./install.sh
+```
+O script instala todas as dependências, copia as configs e habilita os serviços automaticamente.
 ## 📦 Dependências
-
 ### Pacman
 ```bash
 sudo pacman -S hyprland waybar kitty zsh rofi-wayland \
+               hyprlock swayidle \
                swww nemo brightnessctl playerctl \
                bluez bluez-utils blueman \
                networkmanager network-manager-applet \
@@ -32,34 +38,33 @@ sudo pacman -S hyprland waybar kitty zsh rofi-wayland \
                xdg-desktop-portal-hyprland \
                wireless_tools wl-clipboard \
                gnome-software playerctl \
-               gtk3 python-gobject
+               gtk3 python-gobject flatpak
 ```
-
 ### AUR (yay)
 ```bash
 yay -S swayosd-git swaync waypaper
 ```
-
 ## ⚙️ Após instalar
-
 ### Habilite os serviços:
 ```bash
 sudo systemctl enable --now bluetooth
 sudo systemctl enable --now NetworkManager
 sudo systemctl enable --now swayosd-libinput-backend.service
 sudo systemctl enable sddm
+systemctl --user enable --now swayidle.service
 ```
-
 ### Configure o layout do teclado:
 Edite `~/.config/hypr/hyprland.conf` e mude o bloco `input` para o layout do seu teclado.
-
-### Desative o power saving do WiFi (melhora performance):
-```bash
-# Substitua wlp3s0 pelo nome da sua interface WiFi
-sudo iwconfig wlp3s0 power off
+```ini
+input {
+    kb_layout = br
+}
 ```
-
-Para desativar permanentemente:
+### Adicione um wallpaper:
+```bash
+cp seu-wallpaper.jpg ~/wallpapers/
+```
+### Desative o power saving do WiFi (melhora performance):
 ```bash
 sudo nano /etc/NetworkManager/conf.d/wifi-powersave.conf
 ```
@@ -67,9 +72,7 @@ sudo nano /etc/NetworkManager/conf.d/wifi-powersave.conf
 [connection]
 wifi.powersave = 2
 ```
-
 ## ⌨️ Atalhos principais
-
 | Atalho | Ação |
 |---|---|
 | Super + T | Terminal (Kitty) |
@@ -95,12 +98,12 @@ wifi.powersave = 2
 | Super + Shift + LMB | Redimensionar janela |
 | Teclas Fn | Volume e brilho |
 | Teclas mídia | Play/Pause/Próxima/Anterior |
-
 ## 📁 Estrutura
 ```
 ~/.config/
 ├── hypr/
-│   └── hyprland.conf
+│   ├── hyprland.conf
+│   └── hyprlock.conf
 ├── waybar/
 │   ├── config.jsonc
 │   ├── style.css
@@ -119,6 +122,9 @@ wifi.powersave = 2
 ├── swaync/
 │   ├── config.json
 │   └── style.css
-└── kitty/
-    └── kitty.conf
+├── kitty/
+│   └── kitty.conf
+└── systemd/
+    └── user/
+        └── swayidle.service
 ```
