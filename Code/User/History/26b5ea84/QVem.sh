@@ -8,7 +8,7 @@ apps=$(find /usr/share/applications ~/.local/share/applications /var/lib/flatpak
     [ "$hidden" = "true" ] && continue
 
     name=$(grep -m1 "^Name=" "$f" | cut -d= -f2)
-    raw_exec=$(grep -m1 "^Exec=" "$f" | cut -d= -f2-)
+    raw_exec=$(grep -m1 "^Exec=" "$f" | cut -d= -f2)
 
     if echo "$raw_exec" | grep -q "flatpak run"; then
         appid=$(echo "$raw_exec" | grep -oP '[\w]+\.[\w]+\.[\w]+')
