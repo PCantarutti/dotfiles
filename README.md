@@ -2,6 +2,7 @@
 
 ## 📸 Preview
 <!-- Adicione um screenshot aqui depois -->
+![alt text](2026-03-16_01-30-24.png) ![alt text](2026-03-16_01-30-09.png) ![alt text](2026-03-16_01-29-30.png)
 
 ## 🖥️ Setup
 - **OS:** Arch Linux
@@ -52,18 +53,29 @@ Edite `~/.config/hypr/hyprland.conf` e mude o bloco `input` para o layout do seu
 
 | Atalho | Ação |
 |---|---|
-| Super + T | Terminal |
-| Super + B | Firefox |
-| Super + E | Gerenciador de arquivos |
-| Super + P | Launcher |
+| Super + T | Terminal (Kitty) |
+| Super + B | Browser (Firefox) |
+| Super + E | Gerenciador de arquivos (Nemo) |
+| Super + L | Launcher (Wofi) |
+| Super + V | Editor de código (VSCode) |
+| Super + W | Wallpaper (Waypaper) |
+| Super + P | Screenshot |
 | Super + C | Fechar janela |
 | Super + F | Floating |
-| Super + W | Waypaper |
-| Super + Print | Menu de screenshot |
-| Print | Screenshot tela inteira |
-| Shift + Print | Screenshot área |
+| Super + S | Workspace especial (scratchpad) |
+| Super + Shift + S | Mover para scratchpad |
+| Super + R | Pseudotile |
+| Super + J | Toggle split |
+| Super + Escape | Sair do Hyprland |
+| Super + ← → ↑ ↓ | Mover foco |
 | Super + 1-9 | Trocar workspace |
 | Super + Shift + 1-9 | Mover janela para workspace |
+| Super + Scroll | Trocar workspace |
+| Super + LMB | Mover janela |
+| Super + RMB | Redimensionar janela |
+| Super + Shift + LMB | Redimensionar janela |
+| Print | Menu de screenshot |
+| Teclas Fn | Volume e brilho |
 
 ## 📁 Estrutura
 ```
