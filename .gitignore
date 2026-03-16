@@ -11,6 +11,15 @@ chromium/
 firefox/
 BraveSoftware/
 
+# VSCode cache e logs
+Code/DawnGraphiteCache/
+Code/DawnWebGPUCache/
+Code/GPUCache/
+Code/logs/
+Code/User/History/
+Code/User/globalStorage/
+Code/User/workspaceStorage/
+
 # Keyrings
 gnome-keyring/
 kde-wallet/
