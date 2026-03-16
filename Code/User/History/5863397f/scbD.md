@@ -2,9 +2,7 @@
 
 ## 📸 Preview
 <!-- Adicione um screenshot aqui depois -->
-![Preview1](preview/Preview1.png)
-![Preview2](preview/Preview2.png)
-![Preview3](preview/Preview3.png)
+![Preview](Preview1.png) ![Preview](Preview2.png) ![Preview](Preview3.png)
 
 ## 🖥️ Setup
 - **OS:** Arch Linux

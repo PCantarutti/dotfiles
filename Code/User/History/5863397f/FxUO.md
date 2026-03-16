@@ -2,9 +2,7 @@
 
 ## 📸 Preview
 <!-- Adicione um screenshot aqui depois -->
-![Preview1](preview/Preview1.png)
-![Preview2](preview/Preview2.png)
-![Preview3](preview/Preview3.png)
+![alt text](2026-03-16_01-30-24.png) ![alt text](2026-03-16_01-30-09.png) ![alt text](2026-03-16_01-29-30.png)
 
 ## 🖥️ Setup
 - **OS:** Arch Linux

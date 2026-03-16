@@ -199,9 +199,9 @@
         "tooltip":  false
     },
 
-    // #######################################
-    // ### BARRA DE MODULOS DOS APLICATIVOS ##
-    // #######################################
+    // ###########################
+    // ### BARRA DE APLICATIVOS ##
+    // ###########################
 
     "custom/add-dock": {
         "format": "",
@@ -250,6 +250,13 @@
         "tooltip-format": "Spotify",
         "tooltip": true
     },
+
+    "custom/eye-of-gnome": {
+        "format": "Eye of GNOME",
+        "on-click": "eog",
+        "tooltip-format": "Eye of GNOME",
+        "tooltip": true
+    },    
 
     // ############
     // ### GROUPS ##

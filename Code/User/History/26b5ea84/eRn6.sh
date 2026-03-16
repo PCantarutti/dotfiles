@@ -32,7 +32,7 @@ echo "$module" | wl-copy
 # Linha do group/dock modules array
 line=$(grep -n '"modules"' "$CONFIG" | tail -1 | cut -d: -f1)
 style="$HOME/.config/waybar/style.css"
-style_line=$(grep -n "custom-add-dock" "$style" | tail -1 | cut -d: -f1)
+style_line=$(grep -n "custom-add-dock," "$style" | tail -1 | cut -d: -f1)
 
 notify-send "Dock" "Cole o módulo em config.jsonc:$line e adicione o estilo em style.css:$style_line"
 
