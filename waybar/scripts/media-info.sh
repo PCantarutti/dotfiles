@@ -15,7 +15,7 @@ case "$player" in
 esac
 
 if [ -z "$title" ]; then
-    echo "󰎆 Nada tocando"
+    echo " 󰎆 Nada tocando "
 else
     echo "$icon $title"
 fi

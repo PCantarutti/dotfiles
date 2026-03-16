@@ -121,6 +121,7 @@
         "critical-threshold": 75,
         "format":             "  {icon} {temperatureC}°C ",
         "format-critical":    "  {icon} {temperatureC}°C ",
+        "tooltip": false,
         "format-icons":       ["", "", ""]
     },
 
