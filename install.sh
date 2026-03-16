@@ -35,7 +35,8 @@ sudo pacman -S --needed \
     grim slurp wl-clipboard \
     libnotify python-pywal \
     ttf-jetbrains-mono-nerd \
-    xdg-desktop-portal-hyprland \
+    xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
+    adw-gtk-theme \
     wireless_tools \
     gnome-software \
     gtk3 python-gobject \
