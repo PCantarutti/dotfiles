@@ -1,5 +1,5 @@
 * {
-    background:     rgba(20, 20, 20, 0.9);
+    background:     rgba(20, 20, 20, 0.8);
     background-alt: rgba(255, 255, 255, 0.06);
     background-hover: #222222;
     foreground:     #e0e0e0;
