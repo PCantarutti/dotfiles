@@ -63,11 +63,12 @@
     // ###############
 
     "network": {
-        "format-wifi":       " 󰖩 {signalStrength}%",
+        "format-wifi":       " 󰖩 󰁅 {bandwidthDownBytes}",
         "format-disconnected": " 󰖪 ",
         "format-disabled":   " 󰖪 ",
         "format-ethernet":   " Connected  ",
-        "tooltip-format":    "{essid} ({signalStrength}%)",
+        "interval":            2,
+        "tooltip-format":      "{essid} ({signalStrength}%)\n󰁅 {bandwidthDownBytes} 󰁝 {bandwidthUpBytes}",
         "on-click":          "~/.config/waybar/scripts/wifi-menu.sh",
         "on-click-right":    "sh -c 'sleep 0.1 && nm-applet --indicator &'"
     },
@@ -117,6 +118,7 @@
 
     "cpu": {
         "format":  "  {usage}%",
+        "interval":            2,
         "tooltip": true
     },
 
