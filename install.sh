@@ -53,7 +53,8 @@ echo "📦 Instalando pacotes AUR..."
 yay -S --needed \
     swayosd-git \
     swaync \
-    waypaper && ok "Pacotes AUR instalados"
+    waypaper \
+    sddm-sugar-candy-git && ok "Pacotes AUR instalados"
 # Copia configs
 echo ""
 echo "📂 Copiando configurações..."
@@ -74,6 +75,20 @@ echo "⚙️  Configurando swayidle..."
 mkdir -p ~/.config/systemd/user/
 cp systemd/user/swayidle.service ~/.config/systemd/user/
 systemctl --user enable --now swayidle.service && ok "Swayidle habilitado"
+# SDDM + Sugar Candy
+echo ""
+echo "🎨 Configurando SDDM..."
+sudo pacman -S --needed sddm
+sudo mkdir -p /usr/share/sddm/themes/sugar-candy/Backgrounds/
+sudo cp -r sddm/theme.conf /usr/share/sddm/themes/sugar-candy/theme.conf && ok "Tema Sugar Candy configurado"
+sudo cp sddm/sddm.conf /etc/sddm.conf && ok "SDDM configurado"
+WALLPAPER=$(ls wallpapers/ | head -1)
+if [ -n "$WALLPAPER" ]; then
+    sudo cp "wallpapers/$WALLPAPER" /usr/share/sddm/themes/sugar-candy/Backgrounds/
+    ok "Wallpaper do SDDM copiado ($WALLPAPER)"
+else
+    warn "Wallpaper não encontrado, configure manualmente no theme.conf"
+fi
 # Habilita serviços
 echo ""
 echo "⚙️  Habilitando serviços..."

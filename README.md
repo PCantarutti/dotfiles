@@ -14,6 +14,7 @@
 - **OSD:** SwayOSD
 - **Wallpaper:** Waypaper + SWWW
 - **Lock Screen:** Hyprlock + Swayidle
+- **Login Manager:** SDDM + Sugar Candy
 - **File Manager:** Nemo
 ## 🚀 Instalação
 ```bash
@@ -47,7 +48,7 @@ sudo pacman -S waybar kitty zsh rofi-wayland \
 ```
 ### AUR (yay)
 ```bash
-yay -S swayosd-git swaync waypaper
+yay -S swayosd-git swaync waypaper sddm-sugar-candy-git
 ```
 ## ⚙️ Após instalar
 ### Habilite os serviços:
@@ -69,6 +70,8 @@ input {
 ```bash
 cp seu-wallpaper.jpg ~/wallpapers/
 ```
+### Configure o tema do SDDM:
+Edite `/usr/share/sddm/themes/sugar-candy/theme.conf` para personalizar cores, wallpaper e fonte da tela de login.
 ### Desative o power saving do WiFi (melhora performance):
 ```bash
 sudo nano /etc/NetworkManager/conf.d/wifi-powersave.conf
@@ -129,6 +132,9 @@ wifi.powersave = 2
 │   └── style.css
 ├── kitty/
 │   └── kitty.conf
+├── sddm/
+│   ├── sddm.conf
+│   └── theme.conf
 └── systemd/
     └── user/
         └── swayidle.service
