@@ -3,12 +3,11 @@ Description=Idle manager for Wayland
 PartOf=graphical-session.target
 
 [Service]
-Type=simple
 ExecStart=/usr/bin/swayidle -w \
-  timeout 300 'hyprlock' \
+  timeout 300 '/home/pedro/.config/hypr/scripts/lock.sh' \
   timeout 600 'hyprctl dispatch dpms off' \
   resume 'hyprctl dispatch dpms on' \
-  before-sleep 'hyprlock'
+  before-sleep '/home/pedro/.config/hypr/scripts/lock.sh'
 Restart=on-failure
 
 [Install]
