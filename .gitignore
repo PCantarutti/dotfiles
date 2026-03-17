@@ -22,3 +22,5 @@
 !systemd/**
 !wallpapers/
 !wallpapers/**
+!sddm/
+!sddm/**
