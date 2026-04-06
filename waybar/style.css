@@ -1,32 +1,95 @@
 * {
     font-family: JetBrainsMono Nerd Font;
     font-size: 13px;
+    min-height: 0;
 }
 
 window#waybar {
     background-color: transparent;
-    color: #ffffff;
 }
 
+/* =========================
+   Base visual pattern
+   Reference: #system
+   ========================= */
+
 .modules-center,
-#workspaces,
 #clock,
-#custom-power {
+#custom-power,
+#system,
+#media-controls,
+#controls {
     background-color: rgba(20, 20, 20, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+    border-radius: 10px;
     margin: 5px 3px;
     padding: 0 12px;
     color: #ffffff;
 }
 
+#workspaces {
+    background-color: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 5px 3px;
+    padding: 0;
+    color: #ffffff;    
+}
+
+#conection {
+    background-color: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 5px 3px;
+    padding: 0 12px;
+    color: #ffffff;  
+    /* min-width: 190px;   */
+}
+
 #tray {
     background-color: rgba(20, 20, 20, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+    border-radius: 10px;
     margin: 5px 3px;
     padding: 0 8px;
 }
+
+/* =========================
+   Compact padding override
+   Remove a component from here
+   if you want a custom padding
+   ========================= */
+
+#system,
+#media-controls,
+#controls,
+#conection {
+    padding: 0 4px;
+}
+
+/* =========================
+   Shared hover pattern
+   Remove a component from here
+   if you want a custom hover
+   ========================= */
+
+#custom-prev:hover,
+#custom-play:hover,
+#custom-next:hover,
+#custom-add-dock:hover,
+#custom-firefox:hover,
+#custom-stremio:hover,
+#custom-files:hover,
+#custom-code:hover,
+#custom-discord:hover,
+#custom-spotify:hover,
+#custom-software:hover {
+    color: #4a9ef5;
+}
+
+/* =========================
+   Tray
+   ========================= */
 
 #tray > .passive {
     -gtk-icon-effect: dim;
@@ -35,13 +98,17 @@ window#waybar {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #ff4444;
-    border-radius: 20px;
+    border-radius: 10px;
 }
+
+/* =========================
+   Workspaces
+   ========================= */
 
 #workspaces button {
     padding: 0 8px;
     color: #888888;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 #workspaces button.active {
@@ -49,11 +116,11 @@ window#waybar {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-#temperature.critical {
-    color: #ff4444;
-    animation: blink 1s infinite;
-}
+/* =========================
+   Status states
+   ========================= */
 
+#temperature.critical,
 #battery.critical {
     color: #ff4444;
     animation: blink 1s infinite;
@@ -63,7 +130,8 @@ window#waybar {
     color: #ffaa00;
 }
 
-#battery.charging, #battery.full {
+#battery.charging,
+#battery.full {
     color: #00ff88;
 }
 
@@ -71,21 +139,38 @@ window#waybar {
     color: #4a9ef5;
 }
 
-#bluetooth.off {
-    color: #555555;
-}
-
+#bluetooth.off,
 #network.disabled {
     color: #555555;
 }
 
+/* =========================
+   Specific overrides
+   Only keep here what is unique
+   ========================= */
+
 #custom-power {
     font-size: 16px;
     color: #ff4444;
+    min-width: 40px;
+    padding: 0;
+}
+
+#custom-power label {
+    margin: 0;
+    padding: 0 12px;
 }
 
 #custom-media {
     color: #aaaaaa;
+}
+
+/* =========================
+   Media controls
+   ========================= */
+
+.media-drawer {
+    background: transparent;
 }
 
 #custom-prev,
@@ -95,47 +180,9 @@ window#waybar {
     font-size: 14px;
 }
 
-#custom-prev:hover,
-#custom-play:hover,
-#custom-next:hover {
-    color: #4a9ef5;
-}
-
-.media-drawer {
-    background: transparent;
-}
-
-#system {
-    background-color: rgba(20, 20, 20, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    margin: 5px 3px;
-    padding: 0 4px;
-}
-
-#media-controls {
-    background-color: rgba(20, 20, 20, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    margin: 5px 3px;
-    padding: 0 4px;
-}
-
-#controls {
-    background-color: rgba(20, 20, 20, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    margin: 5px 3px;
-    padding: 0 4px;
-}
-
-#conection {
-    background-color: rgba(20, 20, 20, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    margin: 5px 3px;
-    padding: 0 4px;
-}
+/* =========================
+   Dock
+   ========================= */
 
 #dock {
     margin: 5px 3px;
@@ -158,16 +205,9 @@ window#waybar {
     margin: 0;
 }
 
-#custom-add-dock:hover,
-#custom-firefox:hover,
-#custom-stremio:hover,
-#custom-files:hover,
-#custom-code:hover,
-#custom-discord:hover,
-#custom-spotify:hover,
-#custom-software:hover  {
-    color: #4a9ef5;
-}
+/* =========================
+   Animations
+   ========================= */
 
 @keyframes blink {
     to { opacity: 0; }
