@@ -4,10 +4,10 @@ PartOf=graphical-session.target
 
 [Service]
 ExecStart=/usr/bin/swayidle -w \
-  timeout 300 '/home/pedro/.config/hypr/scripts/lock.sh' \
+  timeout 300 '%E/config/hypr/scripts/lock.sh' \
   timeout 600 'hyprctl dispatch dpms off' \
   resume 'hyprctl dispatch dpms on' \
-  before-sleep '/home/pedro/.config/hypr/scripts/lock.sh'
+  before-sleep '%E/config/hypr/scripts/lock.sh'
 Restart=on-failure
 
 [Install]

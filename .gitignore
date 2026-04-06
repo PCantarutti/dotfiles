@@ -1,6 +1,6 @@
 # Ignora tudo
 *
-# Permite pastas e arquivos específicos
+# Permite pastas e arquivos especificos
 !.gitignore
 !README.md
 !install.sh
@@ -24,3 +24,8 @@
 !wallpapers/**
 !sddm/
 !sddm/**
+!starship.toml
+!pavucontrol.ini
+!mimeapps.list
+!waypaper/
+!waypaper/**
