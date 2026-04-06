@@ -253,6 +253,13 @@
         "tooltip": true
     },
 
+    "custom/beaver-notes": {
+        "format": "󰠮",
+        "on-click": "/usr/bin/flatpak run com.beavernotes.beavernotes",
+        "tooltip-format": "Beaver Notes",
+        "tooltip": true
+    },
+
     "custom/discord": {
         "format": "",
         "on-click": "/usr/bin/flatpak run com.discordapp.Discord",
@@ -305,6 +312,6 @@
 
     "group/dock": {
         "orientation": "horizontal",
-        "modules": ["custom/software", "custom/firefox", "custom/code", "custom/files", "custom/stremio", "custom/spotify", "custom/discord"]
+        "modules": ["custom/software", "custom/firefox", "custom/code", "custom/files", "custom/beaver-notes", "custom/stremio", "custom/spotify", "custom/discord"]
     }
 }
