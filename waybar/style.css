@@ -43,7 +43,7 @@ window#waybar {
     margin: 5px 3px;
     padding: 0 12px;
     color: #ffffff;  
-    /* min-width: 190px;   */
+    min-width: 200px;  
 }
 
 #tray {

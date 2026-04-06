@@ -26,7 +26,7 @@ echo "$NOW $(date +%s)" > "$CACHE"
 
 # Sem dado anterior
 if [ -z "$PREV_BYTES" ]; then
-    echo ' 󰁅 --M/s '
+    echo ' 󰖩 󰁅 --M/s '
     exit 0
 fi
 
@@ -34,7 +34,7 @@ ELAPSED=$(( $(date +%s) - PREV_TIME ))
 [ "$ELAPSED" -le 0 ] && ELAPSED=1
 
 DIFF=$(( NOW - PREV_BYTES ))
-[ "$DIFF" -le 0 ] && { printf ' 󰁅 0K/s \n'; exit 0; }
+[ "$DIFF" -le 0 ] && { printf ' 󰖩 󰁅 0K/s'; exit 0; }
 
 BPS=$(( DIFF / ELAPSED ))
 
@@ -42,21 +42,21 @@ if [ "$BPS" -ge 1048576 ]; then
     M=$(( BPS / 1048576 ))
     FRAC=$(( (BPS % 1048576) * 10 / 1048576 ))
     if [ "$M" -ge 100 ]; then
-        printf ' 󰁅%d.%dM/s \n' "$M" "$FRAC"
+        printf ' 󰖩 󰁅 %d.%dM/s' "$M" "$FRAC"
     elif [ "$M" -ge 10 ]; then
-        printf ' 󰁅 %d.%dM/s\n' "$M" "$FRAC"
+        printf ' 󰖩 󰁅 %d.%dM/s' "$M" "$FRAC"
     else
-        printf ' 󰁅 %d.%dM/s \n' "$M" "$FRAC"
+        printf ' 󰖩 󰁅 %d.%dM/s' "$M" "$FRAC"
     fi
 else
     K=$(( BPS / 1024 ))
     if [ "$K" -ge 1000 ]; then
-        printf ' 󰁅 %dK/s \n' "$K"
+        printf ' 󰖩 󰁅 %dK/s' "$K"
     elif [ "$K" -ge 100 ]; then
-        printf ' 󰁅 %dK/s \n' "$K"
+        printf ' 󰖩 󰁅 %dK/s' "$K"
     elif [ "$K" -ge 10 ]; then
-        printf ' 󰁅  %dK/s \n' "$K"
+        printf ' 󰖩 󰁅  %dK/s' "$K"
     else
-        printf ' 󰁅  %dK/s  \n' "$K"
+        printf ' 󰖩 󰁅  %dK/s ' "$K"
     fi
 fi
